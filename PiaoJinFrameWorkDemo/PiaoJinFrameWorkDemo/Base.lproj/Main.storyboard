@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRc-hs-JAG">
+                                <rect key="frame" x="109.5" y="130" width="156" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="Q8K-qq-NrY"/>
+                                    <constraint firstAttribute="height" constant="30" id="u3R-bO-jrV"/>
+                                </constraints>
+                                <state key="normal" title="NSBundle加载动态库"/>
+                                <connections>
+                                    <action selector="loadFrameWorkByBundle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Jq-v3-9NX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqa-9I-Zao">
+                                <rect key="frame" x="126" y="238" width="123" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="2ih-tp-15W"/>
+                                    <constraint firstAttribute="height" constant="30" id="GI2-v3-3G7"/>
+                                </constraints>
+                                <state key="normal" title="调用动态库的方法"/>
+                                <connections>
+                                    <action selector="callMethodOfFrameWork:" destination="BYZ-38-t0r" eventType="touchUpInside" id="agx-ad-tSk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPT-cr-1CQ">
+                                <rect key="frame" x="117.5" y="180" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ool-Q1-cal"/>
+                                    <constraint firstAttribute="width" constant="140" id="sTY-BJ-JYV"/>
+                                </constraints>
+                                <state key="normal" title="dlopen加载动态库"/>
+                                <connections>
+                                    <action selector="dlopenLoadDylibWithPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NMs-Fy-RgI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dX2-0Z-b1M">
+                                <rect key="frame" x="112" y="318" width="151" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="I0R-Z6-869"/>
+                                    <constraint firstAttribute="width" constant="151" id="h8S-w2-bVi"/>
+                                </constraints>
+                                <state key="normal" title="NSBundle释放动态库"/>
+                                <connections>
+                                    <action selector="unLoadFrameWork:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qtW-Wv-5R3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfM-X2-2YK">
+                                <rect key="frame" x="119" y="385" width="138" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BQg-O2-yEC"/>
+                                    <constraint firstAttribute="width" constant="138" id="abV-yj-ey8"/>
+                                </constraints>
+                                <state key="normal" title="dlopen释放动态库"/>
+                                <connections>
+                                    <action selector="dlcloseFrameWork:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vrw-36-71t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dX2-0Z-b1M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3LL-7o-AMf"/>
+                            <constraint firstItem="yPT-cr-1CQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Gp-Gt-Nq6"/>
+                            <constraint firstItem="GRc-hs-JAG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="110" id="9A1-r0-kGD"/>
+                            <constraint firstItem="GRc-hs-JAG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GPL-6e-KWt"/>
+                            <constraint firstItem="qqa-9I-Zao" firstAttribute="top" secondItem="yPT-cr-1CQ" secondAttribute="bottom" constant="28" id="Sdb-1s-V4I"/>
+                            <constraint firstItem="yPT-cr-1CQ" firstAttribute="top" secondItem="GRc-hs-JAG" secondAttribute="bottom" constant="20" id="YAq-gl-zNw"/>
+                            <constraint firstItem="zfM-X2-2YK" firstAttribute="top" secondItem="dX2-0Z-b1M" secondAttribute="bottom" constant="37" id="a5m-Hs-RRZ"/>
+                            <constraint firstItem="qqa-9I-Zao" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cYp-8I-YMk"/>
+                            <constraint firstItem="zfM-X2-2YK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sYW-B8-MGj"/>
+                            <constraint firstItem="dX2-0Z-b1M" firstAttribute="top" secondItem="qqa-9I-Zao" secondAttribute="bottom" constant="50" id="w09-Xe-Mdy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+</document>

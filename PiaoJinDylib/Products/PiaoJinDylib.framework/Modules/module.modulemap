@@ -1,0 +1,6 @@
+framework module PiaoJinDylib {
+  umbrella header "PiaoJinDylib.h"
+
+  export *
+  module * { export * }
+}
