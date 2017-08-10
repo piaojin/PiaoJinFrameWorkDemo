@@ -79,7 +79,7 @@ FOUNDATION_EXPORT const unsigned char PiaoJinDylibVersionString[];
 一个库里面可以后很多的代码，但是我们需要设置能够提供给外界使用的接口，可以通过Target—>Build Phases—>Headers来设置，如下图所示：
 
 ![image.png](http://upload-images.jianshu.io/upload_images/3362328-df378f49549957f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-### 我们只需将希望开放的头文件放到Public列表中即可，比如我开放了Dylib.h和Person.h两个头文件，在生成的framework的Header目录下就可以看到这两个头文件.一切完成，Run以后就能成功生成framework文件了。
+### 我们只需将希望开放的头文件放到Public列表中即可，比如我开放了PiaoJinDylib.h和PiaoJin.h两个头文件，在生成的framework的Header目录下就可以看到这两个头文件.一切完成，Run以后就能成功生成framework文件了。
 
 ##前面只是我们只是创建了一个动态库文件，但是和静态库类似，该动态库并同时不支持真机和模拟器，可以通过以下步骤创建通用动态库：
  
@@ -227,7 +227,7 @@ rm -r "${WRK_DIR}"
 ### 这边只是一件最简单的例子,实际项目中肯定需要与动态库所代表的模块进行交互,数据的共享等等,这些都是需要去根据实际项目场景再去设计解决的!
 ### 如果是真机调试可以通过运行需打开iTunes导入到PiaoJinFrameWorkDemo应用中。
 
-### 福建文档写的最烂的男人
+## 该Demo已经上传[GitHub](https://github.com/piaojin/PiaoJinFrameWorkDemo/tree/master),有需要的码友可以去看看
 
 ### 参考文档：
 [WWDC2014之iOS使用动态库](http://www.cocoachina.com/industry/20140613/8810.html)
