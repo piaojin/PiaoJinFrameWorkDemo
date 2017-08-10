@@ -1,5 +1,3 @@
-# PiaoJinFrameWorkDemo
-iOS插件化开发
 ### framework是Cocoa/Cocoa Touch程序中使用的一种资源打包方式，可以将将代码文件、头文件、资源文件、说明文档等集中在一起，方便开发者使用，作为一名Cocoa/Cocoa Touch程序员每天都要跟各种各样的Framework打交道。Cocoa/Cocoa Touch开发框架本身提供了大量的Framework，比如Foundation.framework/UIKit.framework/AppKit.framework等。需要注意的是，这些framework无一例外都是动态库。
  
 ### 但残忍的是，Cocoa Touch上并不允许我们使用自己创建的framework。不过由于framework是一种优秀的资源打包方式，拥有无穷智慧的程序员们便想出了以framework的形式打包静态库的招数，因此我们平时看到的第三方发布的framework无一例外都是静态库，真正的动态库是上不了AppStore的。
@@ -184,9 +182,9 @@ rm -r "${WRK_DIR}"
 ```
 
 ### 使用dlopen加载动态库
-### 以PiaoJinDylib.framework为例，动态库中真正的可执行代码为PiaoJinDylib.framework/PiaoJinDylib文件，因此使用dlopen时如果仅仅指定加载动态库的路径为PiaoJinDylib.framework是没法成功加载的。
+### 以PiaoJinDylib.framework为例，动态库中真正的可执行代码为PiaoJinDylib.framework/PiaoJinDylib文件，因此使用dlopen时指定加载动态库的路径为PiaoJinDylib.framework/PiaoJinDylib。
 ```
- NSString *documentsPath = [NSString stringWithFormat:@"%@/Documents/Dylib.framework/Dylib",NSHomeDirectory()]; 
+ NSString *documentsPath = [NSString stringWithFormat:@"%@/Documents/PiaoJinDylib.framework/PiaoJinDylib",NSHomeDirectory()]; 
 [self dlopenLoadDylibWithPath:documentsPath];
     if (dlopen([path cStringUsingEncoding:NSUTF8StringEncoding], RTLD_NOW) == NULL) { 
         char *error = dlerror(); 
@@ -228,6 +226,8 @@ rm -r "${WRK_DIR}"
 
 ### 这边只是一件最简单的例子,实际项目中肯定需要与动态库所代表的模块进行交互,数据的共享等等,这些都是需要去根据实际项目场景再去设计解决的!
 ### 如果是真机调试可以通过运行需打开iTunes导入到PiaoJinFrameWorkDemo应用中。
+
+### 福建文档写的最烂的男人
 
 ### 参考文档：
 [WWDC2014之iOS使用动态库](http://www.cocoachina.com/industry/20140613/8810.html)
